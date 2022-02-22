@@ -240,7 +240,7 @@ h1 {
           backdrop-filter: blur(20px);
   position: absolute;
   left: -27px;
-  z-index: 5;
+  z-index: 1;
   overflow-y: hidden;
   transition: 0.2s ease-in-out;
 }
@@ -291,7 +291,7 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   background: transparent;
 }
 
@@ -839,6 +839,11 @@ h2 {
             backdrop-filter: none;
     box-shadow: none;
     top: 29%;
+    z-index: 1;
+  }
+
+  #overlay {
+    z-index: 3;
   }
 
   .content {

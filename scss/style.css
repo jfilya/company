@@ -68,8 +68,28 @@ header {
   padding-top: 79px;
   padding-bottom: 67px;
   position: relative;
+  transform: translateX(-150%);
+  -webkit-animation: ani 1s forwards;
+          animation: ani 1s forwards;
 }
 
+@-webkit-keyframes ani {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ani {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .navig {
   margin-left: 19.2vw;
   display: flex;
@@ -577,6 +597,7 @@ h2 {
 .mission {
   display: flex;
   justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 1160px;
 }
@@ -584,12 +605,14 @@ h2 {
   width: 555px;
   height: 472px;
   border-radius: 17px;
-  background-image: url(../img/security1.png);
+  background-size: cover;
+  background: url(../img/security1.png);
   margin-bottom: 53px;
   padding: 50px 0 81px 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 .mission__block p {
   font-weight: 500;
@@ -597,6 +620,8 @@ h2 {
   max-width: 371px;
   line-height: 35px;
   margin-bottom: 21px;
+  z-index: 1;
+  transition: 0.2s;
 }
 .mission__block .extra {
   color: #707070;
@@ -606,24 +631,72 @@ h2 {
   width: 264px;
   overflow-y: hidden;
   opacity: 0;
+  z-index: 1;
   transition: 0.2s;
 }
 .mission__block a {
+  transition: 0.2s;
+}
+.mission__block a .learn {
   color: #707070;
   font-size: 1.125rem;
 }
+.mission__block a::before {
+  content: "";
+  background: url(../img/arrow.svg);
+  transform: rotate(180deg);
+  position: absolute;
+  width: 30px;
+  height: 25px;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 1;
+}
+.mission__block:hover a::before {
+  opacity: 1;
+}
+.mission__block:hover .extra {
+  opacity: 1;
+}
+.mission__block:hover .learn {
+  opacity: 0;
+}
 .mission__block2 {
-  background-image: url(../img/security2.png);
+  background: url(../img/security2.png);
   margin-bottom: 53px;
 }
 .mission__block3 {
-  background-image: url(../img/security3.png);
+  background: url(../img/security3.png);
 }
 .mission__block4 {
-  background-image: url(../img/security4.png);
+  background: url(../img/security4.png);
+}
+.mission__info::before {
+  content: "";
+  background: #007dfb;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 17px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  top: 0%;
+  left: 0%;
+  opacity: 0;
+  z-index: 0;
+}
+.mission__info:hover::before {
+  opacity: 0.79;
+}
+.mission__info:hover p {
+  color: #fff;
 }
 .mission__info:hover .extra {
-  opacity: 1;
+  color: #fff;
+}
+.mission__info:hover a::before {
+  background: url(../img/arrowwhite.svg);
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1440px) {
@@ -804,5 +877,33 @@ h2 {
     background: url(../img/bg-login-adapt.png);
     background-repeat: no-repeat;
     background-size: contain;
+  }
+
+  .mission__block {
+    width: 100%;
+  }
+}
+@media (max-width: 420px) {
+  .mission__block {
+    padding: 5px;
+    width: 280px;
+    height: 133px;
+    margin-bottom: 15px;
+  }
+  .mission__block p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 23px;
+  }
+  .mission__block .extra {
+    opacity: 1;
+    font-size: 0.875rem;
+    line-height: 23px;
+  }
+  .mission__block a {
+    display: none;
+  }
+  .mission__info {
+    background: #dee2e6;
   }
 }/*# sourceMappingURL=style.css.map */

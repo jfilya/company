@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Company</title>
+  </head>
+  <body>
+    <header class="registerlist">
+      <div class="container">
+        <a class="navig__logo logo" href="./index.html">Company</a>
+        <form class="register" action="#">
+          <label>Registration form</label>
+          <input class="register__forms" type="text" placeholder="Name" required name="name" />
+            <select class="register__forms" name="Country">
+                <option selected>Country</option>
+                <option>Argentina</option>
+                <option>Bulgaria</option>
+                <option>Georgia</option>
+                <option>France</option>
+                <option>...</option>
+            </select>
+          <input class="register__forms" type="email" placeholder="Email" required name="email" />
+          <input class="register__forms" type="phone" placeholder="Phone" required name="phone" id="mask-phone"/>
+          <button class="btn" type="submit">Registration</button>
+        </form>
+      </div>
+    </header>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/maskedinput.js"></script>
+    <script>
+      $("#mask-phone").mask("+3 (999) 9999999");
+    </script>
+  </body>
+</html>

@@ -321,7 +321,6 @@ h1 {
   margin-bottom: 63px;
 }
 .content__info__title {
-  display: flex;
   font-size: 1.5625rem;
   margin-bottom: 19px;
   position: relative;
@@ -334,7 +333,7 @@ h1 {
   height: 12px;
   width: 15px;
   position: absolute;
-  right: 63%;
+  right: -30px;
   top: 32%;
   opacity: 0;
 }

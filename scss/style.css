@@ -303,6 +303,7 @@ h1 {
   width: 852px;
   height: 395px;
   z-index: 2;
+  background: #ffffff77;
   border-radius: 42px;
   box-shadow: 0px 0px 10px #acacac63;
   -webkit-backdrop-filter: blur(50px);
